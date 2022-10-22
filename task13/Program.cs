@@ -1,6 +1,9 @@
 ﻿void ThirdDigitOfNumber(int number)
 {
-    if (number < 100) Console.WriteLine("У числа нет третьей цифры");
+    if (number < 100) 
+    {
+        Console.WriteLine("У числа нет третьей цифры");
+    }
     else
     {
         while (number > 1000)
