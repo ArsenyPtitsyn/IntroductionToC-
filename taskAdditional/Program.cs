@@ -24,7 +24,10 @@ void PrimeNumbersFrom1ToN(int number)
     {
         if (IsPrimeNumber(index))
         {
-            Console.Write(index + ", ");
+            Console.Write(index + " ");
         }
+        index++;
     }
 }
+
+PrimeNumbersFrom1ToN(11);
