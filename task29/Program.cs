@@ -1,7 +1,7 @@
 ﻿int[] FillArray()
 {
     Console.Write("Введите любое количество целых чисел через зяапятую без пробелов: ");
-
+    // Естественно, что задачу по обработке всех возможных ислкючений в данном случае решить очень не просто!
     string integersString = Console.ReadLine();
     string[] integers = integersString.Split(",");
 
