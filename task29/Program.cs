@@ -1,6 +1,6 @@
 ﻿int[] FillArray()
 {
-    Console.Write("Введите любое количество целых чисел через зяапятую: ");
+    Console.Write("Введите любое количество целых чисел через зяапятую без пробелов: ");
 
     string integersString = Console.ReadLine();
     string[] integers = integersString.Split(",");
