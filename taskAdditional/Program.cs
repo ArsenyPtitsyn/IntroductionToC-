@@ -1,7 +1,7 @@
 ﻿bool IsPrimeNumber(int n)
 {
     int index = 2;
-    while (index < n)
+    while (index <= Math.Sqrt(n))
     {
         if (n % index != 0)
         {
