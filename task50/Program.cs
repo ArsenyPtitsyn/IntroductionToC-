@@ -6,18 +6,25 @@
 
 int[,] CreateTwoDimensionalArray(int rows, int cols, int minValue, int maxValue)
 {
-    int[,] array = new int[rows, cols];
-
-    var rnd = new Random();
-
-    for (int i = 0; i < rows; i++)
+    if (rows <= 0 || cols <= 0)
     {
-        for (int j = 0; j < cols; j++)
-        {
-            array[i, j] = rnd.Next(minValue, maxValue + 1);
-        }
+        throw new IndexOutOfRangeException();
     }
-    return array;
+    else
+    {
+        int[,] array = new int[rows, cols];
+
+        var rnd = new Random();
+
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                array[i, j] = rnd.Next(minValue, maxValue + 1);
+            }
+        }
+        return array;
+    }
 }
 
 // 2. Для удобства восприятия, выведем этот массив на экран.
@@ -46,4 +53,13 @@ void PrintElementWithSpecifiedIndexes(int[,] array, int i, int j)
     }
 }
 
-int[,] array = CreateTwoDimensionalArray(15, 10, );
+try
+{
+    int[,] array = CreateTwoDimensionalArray(7, 10, -4, 18);
+    PrintArray(array);
+    PrintElementWithSpecifiedIndexes(array, 1, 8);
+}
+catch
+{
+    Console.WriteLine("Количество строк и количество столбцов в массиве должно быть положительным!");
+}
