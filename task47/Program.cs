@@ -1,17 +1,24 @@
 ﻿double[,] CreateTwoDimensionalArray(int rows, int cols, double maxValue, double minValue)
 {
-    double[,] array = new double[rows, cols];
-
-    var rnd = new Random();
-
-    for (int i = 0; i < rows; i++)
+    if (rows <= 0 || cols <= 0)
     {
-        for (int j = 0; j < cols; j++)
-        {
-            array[i, j] = rnd.NextDouble() * (maxValue - minValue) + minValue;
-        }
+        throw new IndexOutOfRangeException();
     }
-    return array;
+    else
+    {
+        double[,] array = new double[rows, cols];
+
+        var rnd = new Random();
+
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                array[i, j] = rnd.NextDouble() * (maxValue - minValue) + minValue;
+            }
+        }
+        return array;
+    }
 }
 
 void PrintArray(double[,] array)
@@ -26,5 +33,12 @@ void PrintArray(double[,] array)
     }
 }
 
-double[,] array = CreateTwoDimensionalArray(5, 3, -10, 10);
-PrintArray(array);
+try
+{
+    double[,] array = CreateTwoDimensionalArray(-5, 3, -10, 10);
+    PrintArray(array);
+}
+catch
+{
+    Console.WriteLine("Количество строк и количество столбцов в массиве должно быть положительным!");
+}
