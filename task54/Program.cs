@@ -65,8 +65,15 @@ void SortRowsOf2DArray(int[,] array)
     }
 }
 
-int[,] array = CreateArray(3, 3, -10, 10);
-PrintArray(array);
-Console.WriteLine();
-SortRowsOf2DArray(array);
-PrintArray(array);
+try
+{
+    int[,] array = CreateArray(3, 3, -10, 10);
+    PrintArray(array);
+    Console.WriteLine();
+    SortRowsOf2DArray(array);
+    PrintArray(array);
+}
+catch
+{
+    Console.WriteLine("Количество строк и количество столбцов в массиве должно быть положительным!");
+}
