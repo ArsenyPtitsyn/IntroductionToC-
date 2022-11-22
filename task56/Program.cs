@@ -72,8 +72,15 @@ int FindIndexOfMinElement(int[] array)
     return indexOfMinElement;
 }
 
-int[,] array = CreateArray(5, -4, 8);
-PrintArray(array);
-int[] RowsOf2DArray = GetArrayOfSumElementsOfRows(array);
-int rowWithMinSumOfElements = FindIndexOfMinElement(RowsOf2DArray) + 1; // Нумерация начинается с 0, а не с 1.
-Console.WriteLine($"Строка с минимальной суммой элементов для данного массива: {rowWithMinSumOfElements}");
+try
+{
+    int[,] array = CreateArray(5, -4, 8);
+    PrintArray(array);
+    int[] RowsOf2DArray = GetArrayOfSumElementsOfRows(array);
+    int rowWithMinSumOfElements = FindIndexOfMinElement(RowsOf2DArray) + 1; // Нумерация начинается с 0, а не с 1.
+    Console.WriteLine($"Строка с минимальной суммой элементов для данного массива: {rowWithMinSumOfElements}");
+}
+catch
+{
+    Console.WriteLine("Количество строк и количество столбцов в массиве должно быть положительным!");
+}
