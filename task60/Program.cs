@@ -54,7 +54,7 @@ int[,,] Create3DArray(int dim1, int dim2, int dim3)
         {
             for (int k = 0; k < dim3; k++)
             {
-                resultArray[i, j, k] = supportArray[i * dim1 + j * dim2 + k * dim3];
+                resultArray[i, j, k] = supportArray[i * dim2 * dim3 + j * dim3 + k];
             }
         }
     }
@@ -77,9 +77,17 @@ void Print3DArray(int[,,] array)
     }
 }
 
+// void Print1DArray(int[] array)
+// {
+//     for (int i = 0; i < array.Length; i++)
+//     {
+//         Console.Write(array[i] + "\t");
+//     }
+// }
+
 try
 {
-    int[,,] array = Create3DArray(3, 5, 7);
+    int[,,] array = Create3DArray(3, 2, 3);
     Print3DArray(array);
 }
 catch
